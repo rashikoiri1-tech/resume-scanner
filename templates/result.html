@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results - Evacuation Scanner</title>
+    <style>
+        body { font-family: Arial; max-width: 900px; margin: 40px auto; padding: 20px; }
+        h1 { color: #333; }
+        .skills { background: #f0f0f0; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .company { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .match { font-size: 24px; font-weight: bold; color: #28a745; }
+        .back { margin-top: 20px; }
+        a { background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Evacuation Scanner Results</h1>
+    
+    <div class="skills">
+        <h3>Extracted Skills from Resume:</h3>
+        <p>{{ extracted_skills | join(', ') }}</p>
+    </div>
+
+    <h2>Top Company Matches:</h2>
+    {% for result in results %}
+    <div class="company">
+        <h3>{{ result.company }}</h3>
+        <p class="match">Match: {{ result.match }}%</p>
+        <p><strong>Required Skills:</strong> {{ result.required_skills | join(', ') }}</p>
+        <p><strong>Matched Skills:</strong> {{ result.matched_skills | join(', ') }}</p>
+    </div>
+    {% endfor %}
+
+    <div class="back">
+        <a href="/">← Scan Another Resume</a>
+    </div>
+</body>
+</html>
