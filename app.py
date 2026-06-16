@@ -6,6 +6,7 @@ import re
 
 app = Flask(__name__)
 #hello
+#added new commit
 
 # PATTERN: 15 COMPANIES DATABASE - Easy to add more
 COMPANIES_DB = {
