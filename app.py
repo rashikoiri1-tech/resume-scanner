@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 
 app = Flask(__name__)
+#hello
 
 # PATTERN: 15 COMPANIES DATABASE - Easy to add more
 COMPANIES_DB = {
